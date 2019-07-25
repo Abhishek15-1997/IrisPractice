@@ -34,9 +34,9 @@ public class validate extends HttpServlet {
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+			
 			ServletContext context=getServletContext();
-			context.setAttribute("connection", conn);
+			Connection conn=(Connection)context.getAttribute("connObj");
 			
 			PreparedStatement ps=conn.prepareStatement("select * from usertable where email=? and password=? ");
 			ps.setString(1, s1);

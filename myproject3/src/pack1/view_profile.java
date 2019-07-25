@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.sql.*;
-/**
- * Servlet implementation class view_profile
- */
+
 @WebServlet("/view_profile")
 public class view_profile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +28,7 @@ public class view_profile extends HttpServlet {
 		
 		try
 		{
-			Connection conn=(Connection)getServletContext().getAttribute("connection");
+			Connection conn=(Connection)getServletContext().getAttribute("connObj");
 			PreparedStatement ps=conn.prepareStatement("select * from usertable where email=? ");
 			ps.setString(1, email);
 			ResultSet rs=ps.executeQuery();		
@@ -51,7 +49,7 @@ public class view_profile extends HttpServlet {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
+			System.out.println("...."+e);
 		}
 		
 		
