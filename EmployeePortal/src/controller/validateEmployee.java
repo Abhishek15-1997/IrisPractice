@@ -42,16 +42,17 @@ public class validateEmployee extends HttpServlet {
 			HttpSession session=request.getSession();
 			
 			session.setAttribute("empId", emp2.getEmpid());
-			session.setAttribute("Employee/Admin", emp2);
+			session.setAttribute("EmpAd", emp2);
 
 			if(emp2.getRole().equals("Admin"))
 			{
-				System.out.println("iff part");
+				System.out.println("inside admin");
 				rd=request.getRequestDispatcher("HomeForAdmin.jsp");
 				rd.forward(request, response);
 			}
 			else if(emp2.getRole().equals("Employee"))
 			{
+				System.out.println("inside employee");
 				rd=request.getRequestDispatcher("HomeForEmp.jsp");
 				rd.forward(request, response);
 				

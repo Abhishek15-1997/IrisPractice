@@ -6,11 +6,12 @@
 <head>
 <div align="center">
 
-	<h1 style="color:green;">Welcome <%= session.getAttribute("empname") %>  to the portal</h1>
+	<h1 style="color:green;">Welcome   ${EmpAd.f_name }  to the portal</h1>
 	
 </head>
 <body>
-	<a href="viewProfile">View Profile Of Employees</a><br></br>
+	<a href="ViewAllEmps">View Profile Of Employees</a><br></br>
+	<a href="SearchEmployee.jsp">Search an Employees</a><br></br>
 	
 	<a href="UpdateProfile">Update Profile</a><br></br>
 	<a href="LogIn.jsp">Log Out </a><br></br>

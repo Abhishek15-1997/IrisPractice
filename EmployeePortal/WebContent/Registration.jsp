@@ -12,6 +12,7 @@
 	<legend>Registration Form</legend>
 	
 	<table>
+	
 	<tr>
 	<td>Enter your First Name</td><td><input type="text" name="fname"></td>
 	</tr>
@@ -41,7 +42,7 @@
 	</tr>
 		
 	</table>	
-	<input type="submit" value="submit" >
+	<tr><td><input type="submit" value="submit" ></td><td><input type="submit" value="go back" onclick="form.action='LogIn.jsp';" ></td>
 	
 	</fieldset>
 	</form>

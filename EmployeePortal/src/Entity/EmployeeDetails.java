@@ -11,7 +11,14 @@ public class EmployeeDetails {
 	private String phoneNo;
 	private String Role;
 	private String pass;
+	private Address addr;
 	
+	public Address getAddr() {
+		return addr;
+	}
+	public void setAddr(Address addr) {
+		this.addr = addr;
+	}
 	public int getEmpid() {
 		return empid;
 	}

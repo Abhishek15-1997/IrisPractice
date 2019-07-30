@@ -2,6 +2,8 @@ package Entity;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -151,6 +153,83 @@ public class EmployeeDao_Impl implements EmployeeDao{
 		
 		return false;
 	}
+
+	@Override
+	public List<EmployeeDetails> ShowAllEmployees() {
+		
+		try
+		{
+			Connection con=ConnectionProvider.getdbCon();
+			System.out.println("connection.....");
+			PreparedStatement ps=con.prepareStatement("select * from employee2 natural join login where empid!= 100");
+			
+			ResultSet rs=ps.executeQuery();
+			List<EmployeeDetails> emp=new ArrayList<>();
+			EmployeeDetails e1;
+			while(rs.next())
+			{
+				e1=new EmployeeDetails();
+				e1.setEmpid(rs.getInt(1));
+				e1.setF_name(rs.getString(2));
+				e1.setL_name(rs.getString(3));
+				e1.setAge(rs.getInt(4));
+				e1.setGender(rs.getString(5));
+				e1.setPhoneNo(rs.getString(6));
+				e1.setPass(rs.getString(7));
+				e1.setRole(rs.getString(8));
+				
+				emp.add(e1);
+			}
+			System.out.println("emp Imple of list");
+			return emp;
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+		return null;
+	}
+
+	@Override
+	public EmployeeDetails search(int e) {
+
+		
+		try
+		{
+			Connection con=ConnectionProvider.getdbCon();
+			System.out.println("connection");
+			ps=con.prepareStatement("select * from employee2 natural join login where empid=?");
+			
+			ps.setInt(1, e);
+			
+			ResultSet rs=ps.executeQuery();
+			EmployeeDetails emp;
+			if(rs.next())
+			{
+				emp=new EmployeeDetails();
+				emp.setEmpid(rs.getInt(1));
+				emp.setF_name(rs.getString(2));
+				emp.setL_name(rs.getString(3));
+				emp.setAge(rs.getInt(4));
+				emp.setGender(rs.getString(5));
+				emp.setPhoneNo(rs.getString(6));
+				emp.setPass(rs.getString(7));
+				emp.setRole(rs.getString(8));
+				
+				return emp;
+			}	
+						
+		}
+		catch(Exception e1)
+		{
+			System.out.println(e1);
+		}
+		
+		return null;
+	}
+	
 	
 
 }

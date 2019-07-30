@@ -4,10 +4,11 @@
 <html>
 <head>
 <div align="center">
-	<h1 style="color:green;">Welcome  <%= session.getAttribute("empname") %>  to the portal</h1>
+	<h1 style="color:green;">Welcome   ${EmpAd.f_name }  to the portal</h1>
 </head>
 <body>
 	<a href="viewProfileForEmp.jsp">View Profile</a><br></br>
+	<a href="AddAddress.jsp">Add Address</a><br></br>
 	<a href="UpdateProfile.jsp">Update Profile</a><br></br>
 	<a href="delete">Delete Profile</a><br></br>
 	<a href="LogIn.jsp">Log Out</a><br></br>
