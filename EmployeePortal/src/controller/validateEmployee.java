@@ -43,6 +43,7 @@ public class validateEmployee extends HttpServlet {
 			
 			session.setAttribute("empId", emp2.getEmpid());
 			session.setAttribute("EmpAd", emp2);
+			
 
 			if(emp2.getRole().equals("Admin"))
 			{
@@ -63,10 +64,7 @@ public class validateEmployee extends HttpServlet {
 			rd=request.getRequestDispatcher("LogIn.jsp");
 		rd.forward(request, response);
 		}
-			
-		
-					
-			
+										
 	}
 }
 

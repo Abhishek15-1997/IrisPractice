@@ -37,8 +37,13 @@
 		<tr>
 	<td>Enter your Phone No</td><td><input type="text" name="ph_no"></td>
 	</tr>
+	
 	<tr>
-	<td>Enter your Password</td><td><input type="text" name="pass"></td>
+	<td>Enter your Email ID</td><td><input type="text" name="email" required > </td>
+	</tr>
+	
+	<tr>
+	<td>Enter your Password</td><td><input type="text" name="pass" required ></td>
 	</tr>
 		
 	</table>	

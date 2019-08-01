@@ -29,6 +29,8 @@ PrintWriter out=response.getWriter();
 		int age=Integer.parseInt(request.getParameter("age"));
 		String s4=request.getParameter("gender");
 		String s5=request.getParameter("pass");
+		String s6=request.getParameter("email");
+		
 		
 		System.out.println(s4);
 		

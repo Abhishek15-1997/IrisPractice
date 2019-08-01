@@ -1,7 +1,11 @@
 package Entity;
 
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
 
-public class EmployeeDetails {
+@WebListener
+public class EmployeeDetails implements HttpSessionBindingListener {
 	
 	private int empid;
 	private String f_name;
@@ -66,6 +70,19 @@ public class EmployeeDetails {
 	}
 	public void setRole(String role) {
 		Role = role;
+	}
+	@Override
+	public void valueBound(HttpSessionBindingEvent event1) {
+		EmployeeDetails emp=(EmployeeDetails)event1.getValue(); //when employee object is added
+		System.out.println("..........."+event1.getName());
+		String phoneNo=emp.getPhoneNo();
+		if(phoneNo.startsWith("+91"))
+			emp.setPhoneNo("+91"+phoneNo);
+	}
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent event2) {
+		
+		
 	}
 	
 	

@@ -11,7 +11,7 @@
 	<a href="AddAddress.jsp">Add Address</a><br></br>
 	<a href="UpdateProfile.jsp">Update Profile</a><br></br>
 	<a href="delete">Delete Profile</a><br></br>
-	<a href="LogIn.jsp">Log Out</a><br></br>
+	<a href="logoutServ">Log Out</a><br></br>
 	
 </body>
 </div>
