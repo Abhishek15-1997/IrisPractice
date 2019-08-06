@@ -29,7 +29,8 @@
 	</table>
 	</form>
 	
-	
+	<%=if(Math.Random()<5.0) %>
+	hello
 </div>
 	
 </body>
