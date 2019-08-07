@@ -18,6 +18,7 @@
         <property name="hbm2ddl.auto">create</property>
         
         <mapping class="com.iris.Entities.Customer"/>
+        <mapping class="com.iris.Entities.Departments"/>
         
         
     </session-factory>
