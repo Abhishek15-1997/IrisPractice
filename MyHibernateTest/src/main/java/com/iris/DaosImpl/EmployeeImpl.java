@@ -27,29 +27,6 @@ public class EmployeeImpl implements EmployeeDao{
 		return false;
 	}
 
-	public Employee getEmployee(String email) {
-		try
-		{
-			Session s=SessionFactoryProvider.getSF().openSession();
-			Employee emp=s.get(Employee.class, email);
-			if(emp!=null)
-				return emp;
-		}
-		catch(Exception e1) {e1.printStackTrace();}
-		return null;
-	}
-
-	public List<Employee> getAllEmployee() {
-		try
-		{
-			Session s=SessionFactoryProvider.getSF().openSession();
-			Query q=s.createQuery("from Employee");
-			List<Employee>list=q.getResultList();
-			return list;
-		}
-		catch(Exception e1) {e1.printStackTrace();}
-		return null;
-	}
 	
 
 }

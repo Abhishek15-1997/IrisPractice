@@ -17,8 +17,9 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create</property>
         
-        <mapping class="com.iris.Entities.Employee"/>
+        
         <mapping class="com.iris.Entities.Departments"/>
+        <mapping class="com.iris.Entities.Employee"/>
         
         
         

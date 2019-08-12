@@ -8,34 +8,43 @@ import com.iris.Entities.*;
 import java.util.*;
 public class Main1 {
 	
+	/**
+	 * @param args
+	 */
+	/**
+	 * @param args
+	 */
+	/**
+	 * @param args
+	 */
 	public static void main(String args[])
 	{
+		//Set<Employee> st=new HashSet<Employee>();
+		/*DepartmentImpl dl=new DepartmentImpl();
+		EmployeeImpl empl=new EmployeeImpl();
 		
-		/*Address ad1=new Address("shibpur","howrah","WB",201);
-		Address ad2=new Address("Behala","Kolkata","WB",106);
+		Departments d=new Departments("IT");
+		dl.addDepartment(d);
+		Employee emp1=new Employee("abhishek@gmail.com","abhishek",22,d);
+		Employee emp2=new Employee("ashish@gmail.com","ashish",22,d);
+		empl.addEmployee(emp1);
+		empl.addEmployee(emp2);*/
+		
+		Set<Employee> st=new HashSet<Employee>();
+		DepartmentImpl dl=new DepartmentImpl();
+		Employee emp1=new Employee("abhishek@gmail.com","abhishek",22);
+		Employee emp2=new Employee("ashish@gmail.com","ashish",22);
+		st.add(emp1);
+		st.add(emp2);
+		Departments d=new Departments(1,"IT",st);
+		dl.addDepartment(d);
+		
+		
+		
 
-		List<Address> list=new ArrayList<Address>();
-		list.add(ad1);
-		list.add(ad2);
-		Employee e=new Employee("abhishek@gmail.com","abhishek",22,list);
+
 		
-		EmployeeDao ed=new EmployeeImpl();
-		if(ed.addEmployee(e))
-			System.out.println("added");
-		else
-			System.out.println("Not added");
-		*/
-		EmployeeDao ed=new EmployeeImpl();
-		Employee emp=new Employee("abhishek@gmail.com","abhishek",22);
 		
-		Departments d=new Departments("cse");
-		DepartmentDao dd=new DepartmentImpl();
-		
-		emp.setD(d);
-		d.setE(emp);
-		
-		//dd.addDepartment(d);
-		ed.addEmployee(emp);
 		
 		
 	}

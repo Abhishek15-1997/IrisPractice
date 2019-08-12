@@ -18,31 +18,11 @@ public class DepartmentImpl implements DepartmentDao{
 			Session s=SessionFactoryProvider.getSF().openSession();
 			Transaction tts=s.beginTransaction();
 			s.save(e);
+			
 			tts.commit();
 			return true;
 		}
 		catch(Exception e1) {e1.printStackTrace();}
 		return false;
-	}
-	
-
-	public Departments getDepartment(int id) {
-		try
-		{
-			Session s=SessionFactoryProvider.getSF().openSession();
-			Departments emp=s.get(Departments.class, id);
-			if(emp!=null)
-				return emp;
-		}
-		catch(Exception e1) {e1.printStackTrace();}
-		return null;
-	}
-	
-
-	public List<Departments> getAllDepartment() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
+	}	
 }

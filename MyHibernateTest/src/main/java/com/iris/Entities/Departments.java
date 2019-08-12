@@ -1,6 +1,7 @@
 package com.iris.Entities;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,34 +14,20 @@ import javax.persistence.OneToOne;
 public class Departments {
 	
 	@Id
-	@GeneratedValue
+	
 	private int d_id;
-	private String dept_name;
+	private String d_name;
 	
-	@OneToOne
-	private Employee e;
-	
+	@OneToMany(cascade=CascadeType.ALL)
+	private Set<Employee> emp;
 	public Departments() {}
-	
-	public Departments( String dept_name) {
-		
-		
-		this.dept_name = dept_name;
+
+	public Departments(int di, String d_name,Set<Employee> emp) {
+		this.d_name = d_name;
+		this.emp=emp;
+		d_id=di;
 		
 	}
-
-	
-	public Employee getE() {
-		return e;
-	}
-
-
-
-	public void setE(Employee e) {
-		this.e = e;
-	}
-
-
 
 	public int getD_id() {
 		return d_id;
@@ -50,13 +37,21 @@ public class Departments {
 		this.d_id = d_id;
 	}
 
-	public String getDept_name() {
-		return dept_name;
+	public String getD_name() {
+		return d_name;
 	}
 
-	public void setDept_name(String dept_name) {
-		this.dept_name = dept_name;
+	public void setD_name(String d_name) {
+		this.d_name = d_name;
 	}
+
+	public Set<Employee> getEmp() {
+		return emp;
+	}
+
+	public void setEmp(Set<Employee> emp) {
+		this.emp = emp;
+	}
+
 	
-
 }
