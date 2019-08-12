@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.DBConfig.DBconfig;
 import com.Daos.ProductDao;
 import com.Entities.Category;
 import com.Entities.Product;
@@ -19,14 +20,19 @@ public class ProductImpl implements ProductDao {
 
 	@Autowired
 	SessionFactory sf;
+	
+	
+	
 	public boolean addProduct(Product c) {	
 		try {
+			
 			System.out.println("......lkjh");
 			
-			Session session=sf.getCurrentSession() ;
+			SessionFactory ss=sf.getSessionFactory();
+			Session s=ss.getCurrentSession();
 			System.out.println("......");
 			//Transaction t=session.beginTransaction();
-			session.save(c);
+			s.save(c);
 			
 		}
 		catch(Exception e) {e.printStackTrace();}
