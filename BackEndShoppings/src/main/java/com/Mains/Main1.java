@@ -37,7 +37,7 @@ public class Main1 {
 		
 		
 		 ProductDao pd=(ProductDao)context.getBean("productDaoImpl", ProductDao.class);
-	//	CategoryDao cd=(CategoryDao)context.getBean("categoryDao", CategoryDao.class);
+		CategoryDao cd=(CategoryDao)context.getBean("categoryDao", CategoryDao.class);
 	        
 		 
 		System.out.println("hi");

@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.Daos.CategoryDao;
 import com.Entities.Category;
 
-@Repository
+@Repository(value="categoryDao")
 @Transactional
 public class CategoryImpl implements CategoryDao {
 
@@ -25,6 +25,7 @@ public class CategoryImpl implements CategoryDao {
 			Session session=sf.getCurrentSession();
 			//Transaction t=session.beginTransaction();
 			session.save(c);
+			return true;
 			
 		}
 		catch(Exception e) {e.printStackTrace();}
