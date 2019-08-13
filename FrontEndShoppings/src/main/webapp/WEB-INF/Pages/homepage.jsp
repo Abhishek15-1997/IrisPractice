@@ -8,6 +8,6 @@
 <body>
 
 	<a href="form">Add Category</a>
-	<a href="viewCategory">View Categories</a>
+	<a href="viewCat">View Categories</a>
 </body>
 </html>
