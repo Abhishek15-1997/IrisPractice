@@ -1,5 +1,6 @@
 package com.Entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,12 +16,12 @@ public class Category {
 	
 	@Id
 	@GeneratedValue
-	private String CategoryId;
+	private int CategoryId;
 	private String CategoryName;
 	private String des;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Product> pro;
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="cat")
+	private Set<Product> pro=new HashSet<Product>();
 	
 	
 	public Set<Product> getPro() {
@@ -29,10 +30,12 @@ public class Category {
 	public void setPro(Set<Product> pro) {
 		this.pro = pro;
 	}
-	public String getCategoryId() {
+	
+	
+	public int getCategoryId() {
 		return CategoryId;
 	}
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(int categoryId) {
 		CategoryId = categoryId;
 	}
 	public String getCategoryName() {

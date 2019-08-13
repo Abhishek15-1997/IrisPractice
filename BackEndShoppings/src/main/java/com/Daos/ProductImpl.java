@@ -14,25 +14,24 @@ import com.Daos.ProductDao;
 import com.Entities.Category;
 import com.Entities.Product;
 
-@Repository
+@Repository(value="productDaoImpl")
 @Transactional
 public class ProductImpl implements ProductDao {
 
 	@Autowired
-	SessionFactory sf;
-	
-	
+	private SessionFactory sf;
 	
 	public boolean addProduct(Product c) {	
 		try {
 			
 			System.out.println("......lkjh");
 			
-			SessionFactory ss=sf.getSessionFactory();
-			Session s=ss.getCurrentSession();
+			
+			Session s=sf.getCurrentSession();
 			System.out.println("......");
 			//Transaction t=session.beginTransaction();
 			s.save(c);
+			return true;
 			
 		}
 		catch(Exception e) {e.printStackTrace();}

@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -13,7 +14,7 @@ public class Product {
 	
 	@Id
 	@GeneratedValue
-	private String ProductId;
+	private int ProductId;
 	private String ProductName;
 	private String Pdes;
 	
@@ -29,11 +30,11 @@ public class Product {
 
 	
 
-	public String getProductId() {
+	public int getProductId() {
 		return ProductId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(int productId) {
 		ProductId = productId;
 	}
 
