@@ -30,7 +30,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/pform",method=RequestMethod.GET)
 	public ModelAndView getCategoryForm(){
-		
+		System.out.println("aa");
 		ModelAndView mv=new ModelAndView("ProductForm");
 		
 		//This is the data we want to share
