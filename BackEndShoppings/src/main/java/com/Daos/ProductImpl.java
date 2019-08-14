@@ -30,7 +30,7 @@ public class ProductImpl implements ProductDao {
 			Session s=sf.getCurrentSession();
 			System.out.println("......");
 			//Transaction t=session.beginTransaction();
-			s.save(c);
+			s.persist(c);
 			return true;
 			
 		}
@@ -59,30 +59,43 @@ public class ProductImpl implements ProductDao {
 	public boolean updateProduct(Product c) {
 		try {
 			Session session=sf.getCurrentSession();
-			Category cat=session.get(Category.class, c.getProductId());
-			if(cat!=null)
-			{
+			
 				session.update(c);
 				return true;
 			}
 					
-		}
+		
 		catch(Exception e) {e.printStackTrace();}
 		return false;
 	}
 
 
 
-	public List<Product> viewAllProuct() {
+	public List<Product> viewAllProduct() {
 		try {
 			Session session=sf.getCurrentSession();
-			Query q=session.createQuery("from Category");
+			Query q=session.createQuery("from Product");
+			
 			return q.getResultList();
 			
 		}
 		catch(Exception e) {e.printStackTrace();}
 		return null;
 	}
+
+
+
+	public Product viewProduct(int id) {
+		try {
+			Session session=sf.getCurrentSession();
+			Product pd=session.get(Product.class,id);
+			
+			return pd;
+			
+			}
+			catch(Exception e) {e.printStackTrace();}
+			return null;
+		}
 
 
 

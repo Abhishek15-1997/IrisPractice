@@ -75,12 +75,10 @@ public class CategoryImpl implements CategoryDao {
 		
 		try {
 			Session session=sf.getCurrentSession();
-			Category cat=session.get(Category.class, c.getCategoryId());
-			if(cat!=null)
-			{
+			
 				session.update(c);
 				return true;
-			}
+			
 					
 		}
 		catch(Exception e) {e.printStackTrace();}

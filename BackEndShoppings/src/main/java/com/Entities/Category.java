@@ -20,7 +20,7 @@ public class Category {
 	private String CategoryName;
 	private String des;
 	
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="cat")
+	@OneToMany(mappedBy="cat")
 	private Set<Product> pro=new HashSet<Product>();
 	
 	

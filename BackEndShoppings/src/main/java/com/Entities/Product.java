@@ -1,6 +1,7 @@
 package com.Entities;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,10 +19,23 @@ public class Product {
 	private String ProductName;
 	private String Pdes;
 	
-	private int cid;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="catId",insertable=false,updatable=false )
 	private Category cat;
+	
+	private int CatId=0	;
+	
+
+	public int getCatId() {
+		return CatId;
+	}
+
+	public void setCatId(int catId) {
+		CatId = catId;
+	}
+
 	public String getPdes() {
 		return Pdes;
 	}
@@ -29,16 +43,7 @@ public class Product {
 	public void setPdes(String pdes) {
 		Pdes = pdes;
 	}
-
 	
-
-	public int getCid() {
-		return cid;
-	}
-
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
 
 	public int getProductId() {
 		return ProductId;
