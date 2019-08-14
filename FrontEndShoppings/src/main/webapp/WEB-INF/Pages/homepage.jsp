@@ -9,5 +9,7 @@
 
 	<a href="form">Add Category</a>
 	<a href="viewCat">View Categories</a>
+	<a href="pform">Add Product</a><br/>
+	<a href="viewProducts">View All Products</a><br/>
 </body>
 </html>

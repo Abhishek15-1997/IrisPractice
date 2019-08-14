@@ -18,6 +18,8 @@ public class Product {
 	private String ProductName;
 	private String Pdes;
 	
+	private int cid;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Category cat;
 	public String getPdes() {
@@ -29,6 +31,14 @@ public class Product {
 	}
 
 	
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
 
 	public int getProductId() {
 		return ProductId;

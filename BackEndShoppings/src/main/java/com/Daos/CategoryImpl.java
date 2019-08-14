@@ -38,8 +38,9 @@ public class CategoryImpl implements CategoryDao {
 		try {
 		Session session=sf.getCurrentSession();
 		Category cat=session.get(Category.class, id);
-		if(cat!=null)
+		
 		return cat;
+		
 		}
 		catch(Exception e) {e.printStackTrace();}
 		return null;
@@ -60,12 +61,9 @@ public class CategoryImpl implements CategoryDao {
 	public boolean delCategory(Category c) {
 		try {
 			Session session=sf.getCurrentSession();
-			Category cat=session.get(Category.class, c.getCategoryId());
-			if(cat!=null)
-			{
 				session.delete(c);
 				return true;
-			}
+			
 			}
 			catch(Exception e) {e.printStackTrace();}
 			
